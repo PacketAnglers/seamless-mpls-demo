@@ -4,7 +4,7 @@
 
 ### Overview:
 
-- 25 Nodes
+- 22 Nodes
 - Built and validated with cEOS-Lab 4.35.0F
 
 ### Requirements
