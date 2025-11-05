@@ -1,9 +1,9 @@
 ---
 # --------------------------------------------------------------
-# Routing Topo 2
+# Arista Seamless MPLS Demo
 # --------------------------------------------------------------
 
-name: routing-topo-2
+name: arista-seamless-mpls-demo
 
 prefix: ""
 
@@ -36,7 +36,7 @@ topology:
       mgmt-ipv4: 172.100.100.111
       binds:
         - sn/pe-1-1.txt:/mnt/flash/ceos-config:ro
-      startup-config: init-configs/PE-1-1.cfg
+      startup-config: configs/PE-1-1.cfg
       ports:
         - '22011:22'
         - '8011:80'
@@ -47,7 +47,7 @@ topology:
       mgmt-ipv4: 172.100.100.112
       binds:
         - sn/pe-1-2.txt:/mnt/flash/ceos-config:ro
-      startup-config: init-configs/PE-1-2.cfg
+      startup-config: configs/PE-1-2.cfg
       ports:
         - '22012:22'
         - '8012:80'
@@ -58,7 +58,7 @@ topology:
       mgmt-ipv4: 172.100.100.113
       binds:
         - sn/pe-1-3.txt:/mnt/flash/ceos-config:ro
-      startup-config: init-configs/PE-1-3.cfg
+      startup-config: configs/PE-1-3.cfg
       ports:
         - '22013:22'
         - '8013:80'
@@ -69,7 +69,7 @@ topology:
       mgmt-ipv4: 172.100.100.114
       binds:
         - sn/pe-1-4.txt:/mnt/flash/ceos-config:ro
-      startup-config: init-configs/PE-1-4.cfg
+      startup-config: configs/PE-1-4.cfg
       ports:
         - '22014:22'
         - '8014:80'
@@ -80,7 +80,7 @@ topology:
       mgmt-ipv4: 172.100.100.115
       binds:
         - sn/pe-1-5.txt:/mnt/flash/ceos-config:ro
-      startup-config: init-configs/PE-1-5.cfg
+      startup-config: configs/PE-1-5.cfg
       ports:
         - '22015:22'
         - '8015:80'
@@ -91,7 +91,7 @@ topology:
       mgmt-ipv4: 172.100.100.116
       binds:
         - sn/pe-1-6.txt:/mnt/flash/ceos-config:ro
-      startup-config: init-configs/PE-1-6.cfg
+      startup-config: configs/PE-1-6.cfg
       ports:
         - '22016:22'
         - '8016:80'
@@ -102,7 +102,7 @@ topology:
       mgmt-ipv4: 172.100.100.251
       binds:
         - sn/rr-1-1.txt:/mnt/flash/ceos-config:ro
-      startup-config: init-configs/RR-1-1.cfg
+      startup-config: configs/RR-1-1.cfg
       ports:
         - '22098:22'
         - '8098:80'
@@ -113,7 +113,7 @@ topology:
       mgmt-ipv4: 172.100.100.101
       binds:
         - sn/core-1.txt:/mnt/flash/ceos-config:ro
-      startup-config: init-configs/CORE-1.cfg
+      startup-config: configs/CORE-1.cfg
       ports:
         - '22001:22'
         - '8001:80'
@@ -124,7 +124,7 @@ topology:
       mgmt-ipv4: 172.100.100.102
       binds:
         - sn/core-2.txt:/mnt/flash/ceos-config:ro
-      startup-config: init-configs/CORE-2.cfg
+      startup-config: configs/CORE-2.cfg
       ports:
         - '22002:22'
         - '8002:80'
@@ -135,7 +135,7 @@ topology:
       mgmt-ipv4: 172.100.100.103
       binds:
         - sn/core-3.txt:/mnt/flash/ceos-config:ro
-      startup-config: init-configs/CORE-3.cfg
+      startup-config: configs/CORE-3.cfg
       ports:
         - '22003:22'
         - '8003:80'
@@ -146,7 +146,7 @@ topology:
       mgmt-ipv4: 172.100.100.104
       binds:
         - sn/core-4.txt:/mnt/flash/ceos-config:ro
-      startup-config: init-configs/CORE-4.cfg
+      startup-config: configs/CORE-4.cfg
       ports:
         - '22004:22'
         - '8004:80'
@@ -157,7 +157,7 @@ topology:
       mgmt-ipv4: 172.100.100.121
       binds:
         - sn/pe-2-1.txt:/mnt/flash/ceos-config:ro
-      startup-config: init-configs/PE-2-1.cfg
+      startup-config: configs/PE-2-1.cfg
       ports:
         - '22021:22'
         - '8021:80'
@@ -168,7 +168,7 @@ topology:
       mgmt-ipv4: 172.100.100.122
       binds:
         - sn/pe-2-2.txt:/mnt/flash/ceos-config:ro
-      startup-config: init-configs/PE-2-2.cfg
+      startup-config: configs/PE-2-2.cfg
       ports:
         - '22022:22'
         - '8022:80'
@@ -179,7 +179,7 @@ topology:
       mgmt-ipv4: 172.100.100.123
       binds:
         - sn/pe-2-3.txt:/mnt/flash/ceos-config:ro
-      startup-config: init-configs/PE-2-3.cfg
+      startup-config: configs/PE-2-3.cfg
       ports:
         - '22023:22'
         - '8023:80'
@@ -190,7 +190,7 @@ topology:
       mgmt-ipv4: 172.100.100.124
       binds:
         - sn/pe-2-4.txt:/mnt/flash/ceos-config:ro
-      startup-config: init-configs/PE-2-4.cfg
+      startup-config: configs/PE-2-4.cfg
       ports:
         - '22024:22'
         - '8024:80'
@@ -201,7 +201,7 @@ topology:
       mgmt-ipv4: 172.100.100.125
       binds:
         - sn/pe-2-5.txt:/mnt/flash/ceos-config:ro
-      startup-config: init-configs/PE-2-5.cfg
+      startup-config: configs/PE-2-5.cfg
       ports:
         - '22025:22'
         - '8025:80'
@@ -212,7 +212,7 @@ topology:
       mgmt-ipv4: 172.100.100.126
       binds:
         - sn/pe-2-6.txt:/mnt/flash/ceos-config:ro
-      startup-config: init-configs/PE-2-6.cfg
+      startup-config: configs/PE-2-6.cfg
       ports:
         - '22026:22'
         - '8026:80'
@@ -223,7 +223,7 @@ topology:
       mgmt-ipv4: 172.100.100.252
       binds:
         - sn/rr-2-1.txt:/mnt/flash/ceos-config:ro
-      startup-config: init-configs/RR-2-1.cfg
+      startup-config: configs/RR-2-1.cfg
       ports:
         - '22099:22'
         - '8099:80'
@@ -234,7 +234,7 @@ topology:
       mgmt-ipv4: 172.100.100.201
       binds:
         - sn/ce-1-1.txt:/mnt/flash/ceos-config:ro
-      startup-config: init-configs/CE-1-1.cfg
+      startup-config: configs/CE-1-1.cfg
       ports:
         - '22201:22'
         - '8201:80'
@@ -245,7 +245,7 @@ topology:
       mgmt-ipv4: 172.100.100.202
       binds:
         - sn/ce-1-2.txt:/mnt/flash/ceos-config:ro
-      startup-config: init-configs/CE-1-2.cfg
+      startup-config: configs/CE-1-2.cfg
       ports:
         - '22202:22'
         - '8202:80'
@@ -256,7 +256,7 @@ topology:
       mgmt-ipv4: 172.100.100.203
       binds:
         - sn/ce-2-1.txt:/mnt/flash/ceos-config:ro
-      startup-config: init-configs/CE-2-1.cfg
+      startup-config: configs/CE-2-1.cfg
       ports:
         - '22203:22'
         - '8203:80'
@@ -267,7 +267,7 @@ topology:
       mgmt-ipv4: 172.100.100.204
       binds:
         - sn/ce-2-2.txt:/mnt/flash/ceos-config:ro
-      startup-config: init-configs/CE-2-2.cfg
+      startup-config: configs/CE-2-2.cfg
       ports:
         - '22204:22'
         - '8204:80'
