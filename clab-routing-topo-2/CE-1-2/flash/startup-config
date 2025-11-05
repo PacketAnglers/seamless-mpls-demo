@@ -1,0 +1,61 @@
+! Startup-config last modified at Wed Nov  5 22:16:16 2025 by root
+! device: CE-1-2 (cEOSLab, EOS-4.35.0F-43819090.eostrunkceos (engineering build))
+!
+no aaa root
+!
+username admin privilege 15 role network-admin secret sha512 $6$TCAow4av3gI5v6w5$coBXjQ7gMwnL/MU5PvHXkXd0nsJnMOHgvzgCgqxTuSOPwKlGEQ63vi/WAgqfWiPJXJM83wcd8Yv5wCrfm0huV1
+!
+management api http-commands
+   no shutdown
+   !
+   vrf MGMT
+      no shutdown
+!
+switchport default mode routed
+!
+no service interface inactive port-id allocation disabled
+!
+transceiver qsfp default-mode 4x10G
+!
+interface defaults
+   mtu 9214
+!
+service routing protocols model multi-agent
+!
+hostname CE-1-2
+!
+spanning-tree mode mstp
+!
+system l1
+   unsupported speed action error
+   unsupported error-correction action error
+!
+vrf instance MGMT
+!
+aaa authorization exec default local
+!
+interface Ethernet1
+   no switchport
+!
+interface Ethernet2
+   no switchport
+!
+interface Management0
+   vrf MGMT
+   ip address 172.100.100.202/24
+!
+ip routing
+no ip routing vrf MGMT
+!
+ipv6 unicast-routing
+!
+ip route vrf MGMT 0.0.0.0/0 172.100.100.1
+!
+router multicast
+   ipv4
+      software-forwarding sfe
+   !
+   ipv6
+      software-forwarding sfe
+!
+end

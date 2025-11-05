@@ -1,0 +1,321 @@
+---
+# --------------------------------------------------------------
+# Routing Topo 2
+# --------------------------------------------------------------
+
+name: routing-topo-2
+
+prefix: ""
+
+mgmt:
+  network: mgmt
+  ipv4-subnet: 172.100.100.0/24
+
+topology:
+
+  defaults:
+    env:
+      INTFTYPE: et
+
+  kinds:
+    ceos:
+      image: ceos:latest
+      env:
+        CLAB_MGMT_VRF: MGMT
+    linux:
+      image: ghcr.io/aristanetworks/aclabs/host-ubuntu:rev1.0
+
+  nodes:
+
+    #########################
+    # DC "B" SPINE          #
+    #########################
+
+    PE-1-1:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.111
+      binds:
+        - sn/pe-1-1.txt:/mnt/flash/ceos-config:ro
+      startup-config: init-configs/PE-1-1.cfg
+      ports:
+        - '22011:22'
+        - '8011:80'
+        - '44311:443'
+
+    PE-1-2:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.112
+      binds:
+        - sn/pe-1-2.txt:/mnt/flash/ceos-config:ro
+      startup-config: init-configs/PE-1-2.cfg
+      ports:
+        - '22012:22'
+        - '8012:80'
+        - '44312:443'
+
+    PE-1-3:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.113
+      binds:
+        - sn/pe-1-3.txt:/mnt/flash/ceos-config:ro
+      startup-config: init-configs/PE-1-3.cfg
+      ports:
+        - '22013:22'
+        - '8013:80'
+        - '44313:443'
+
+    PE-1-4:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.114
+      binds:
+        - sn/pe-1-4.txt:/mnt/flash/ceos-config:ro
+      startup-config: init-configs/PE-1-4.cfg
+      ports:
+        - '22014:22'
+        - '8014:80'
+        - '44314:443'
+
+    PE-1-5:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.115
+      binds:
+        - sn/pe-1-5.txt:/mnt/flash/ceos-config:ro
+      startup-config: init-configs/PE-1-5.cfg
+      ports:
+        - '22015:22'
+        - '8015:80'
+        - '44315:443'
+
+    PE-1-6:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.116
+      binds:
+        - sn/pe-1-6.txt:/mnt/flash/ceos-config:ro
+      startup-config: init-configs/PE-1-6.cfg
+      ports:
+        - '22016:22'
+        - '8016:80'
+        - '44316:443'
+
+    RR-1-1:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.251
+      binds:
+        - sn/rr-1-1.txt:/mnt/flash/ceos-config:ro
+      startup-config: init-configs/RR-1-1.cfg
+      ports:
+        - '22098:22'
+        - '8098:80'
+        - '44398:443'
+
+    CORE-1:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.101
+      binds:
+        - sn/core-1.txt:/mnt/flash/ceos-config:ro
+      startup-config: init-configs/CORE-1.cfg
+      ports:
+        - '22001:22'
+        - '8001:80'
+        - '44301:443'
+
+    CORE-2:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.102
+      binds:
+        - sn/core-2.txt:/mnt/flash/ceos-config:ro
+      startup-config: init-configs/CORE-2.cfg
+      ports:
+        - '22002:22'
+        - '8002:80'
+        - '44302:443'
+
+    CORE-3:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.103
+      binds:
+        - sn/core-3.txt:/mnt/flash/ceos-config:ro
+      startup-config: init-configs/CORE-3.cfg
+      ports:
+        - '22003:22'
+        - '8003:80'
+        - '44303:443'
+
+    CORE-4:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.104
+      binds:
+        - sn/core-4.txt:/mnt/flash/ceos-config:ro
+      startup-config: init-configs/CORE-4.cfg
+      ports:
+        - '22004:22'
+        - '8004:80'
+        - '44304:443'
+
+    PE-2-1:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.121
+      binds:
+        - sn/pe-2-1.txt:/mnt/flash/ceos-config:ro
+      startup-config: init-configs/PE-2-1.cfg
+      ports:
+        - '22021:22'
+        - '8021:80'
+        - '44321:443'
+
+    PE-2-2:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.122
+      binds:
+        - sn/pe-2-2.txt:/mnt/flash/ceos-config:ro
+      startup-config: init-configs/PE-2-2.cfg
+      ports:
+        - '22022:22'
+        - '8022:80'
+        - '44322:443'
+
+    PE-2-3:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.123
+      binds:
+        - sn/pe-2-3.txt:/mnt/flash/ceos-config:ro
+      startup-config: init-configs/PE-2-3.cfg
+      ports:
+        - '22023:22'
+        - '8023:80'
+        - '44323:443'
+
+    PE-2-4:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.124
+      binds:
+        - sn/pe-2-4.txt:/mnt/flash/ceos-config:ro
+      startup-config: init-configs/PE-2-4.cfg
+      ports:
+        - '22024:22'
+        - '8024:80'
+        - '44324:443'
+
+    PE-2-5:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.125
+      binds:
+        - sn/pe-2-5.txt:/mnt/flash/ceos-config:ro
+      startup-config: init-configs/PE-2-5.cfg
+      ports:
+        - '22025:22'
+        - '8025:80'
+        - '44325:443'
+
+    PE-2-6:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.126
+      binds:
+        - sn/pe-2-6.txt:/mnt/flash/ceos-config:ro
+      startup-config: init-configs/PE-2-6.cfg
+      ports:
+        - '22026:22'
+        - '8026:80'
+        - '44326:443'
+
+    RR-2-1:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.252
+      binds:
+        - sn/rr-2-1.txt:/mnt/flash/ceos-config:ro
+      startup-config: init-configs/RR-2-1.cfg
+      ports:
+        - '22099:22'
+        - '8099:80'
+        - '44399:443'
+
+    CE-1-1:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.201
+      binds:
+        - sn/ce-1-1.txt:/mnt/flash/ceos-config:ro
+      startup-config: init-configs/CE-1-1.cfg
+      ports:
+        - '22201:22'
+        - '8201:80'
+        - '44201:443'
+
+    CE-1-2:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.202
+      binds:
+        - sn/ce-1-2.txt:/mnt/flash/ceos-config:ro
+      startup-config: init-configs/CE-1-2.cfg
+      ports:
+        - '22202:22'
+        - '8202:80'
+        - '44202:443'
+
+    CE-2-1:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.203
+      binds:
+        - sn/ce-2-1.txt:/mnt/flash/ceos-config:ro
+      startup-config: init-configs/CE-2-1.cfg
+      ports:
+        - '22203:22'
+        - '8203:80'
+        - '44203:443'
+
+    CE-2-2:
+      kind: ceos
+      mgmt-ipv4: 172.100.100.204
+      binds:
+        - sn/ce-2-2.txt:/mnt/flash/ceos-config:ro
+      startup-config: init-configs/CE-2-2.cfg
+      ports:
+        - '22204:22'
+        - '8204:80'
+        - '44204:443'
+
+    # Host Template
+    # HostB4:
+    #   kind: linux
+    #   mgmt-ipv4: 172.100.100.204
+    #   env:
+    #     TMODE: lacp
+    #     IPV4: 10.10.10.103/24
+    #     STATIC_ROUTE: 10.0.0.0/8
+    #     GW: 10.10.10.1
+    #     IPV6: 2001:db8:10:10::103/64
+    #   ports:
+    #     - '22204:22'
+
+  links:
+    - endpoints: [ PE-1-1:et1, PE-1-3:et1 ]
+    - endpoints: [ PE-1-1:et3, PE-1-2:et3 ]
+    - endpoints: [ PE-1-2:et1, PE-1-4:et1 ]
+    - endpoints: [ PE-1-3:et2, PE-1-5:et2 ]
+    - endpoints: [ PE-1-3:et3, PE-1-4:et3 ]
+    - endpoints: [ PE-1-3:et4, RR-1-1:et1 ]
+    - endpoints: [ PE-1-4:et2, PE-1-6:et2 ]
+    - endpoints: [ PE-1-5:et3, PE-1-6:et3 ]
+    - endpoints: [ PE-1-5:et1, CORE-1:et1 ]
+    - endpoints: [ PE-1-6:et1, CORE-1:et2 ]
+    - endpoints: [ CORE-1:et3, CORE-2:et1 ]
+    - endpoints: [ CORE-2:et2, CORE-3:et3 ]
+    - endpoints: [ CORE-3:et1, PE-2-5:et1 ]
+    - endpoints: [ CORE-3:et2, PE-2-6:et1 ]
+    - endpoints: [ CORE-1:et4, CORE-4:et1 ]
+    - endpoints: [ CORE-3:et4, CORE-4:et2 ]
+    - endpoints: [ PE-2-5:et3, PE-2-6:et3 ]
+    - endpoints: [ PE-2-5:et2, PE-2-3:et2 ]
+    - endpoints: [ PE-2-6:et2, PE-2-4:et2 ]
+    - endpoints: [ PE-2-3:et3, PE-2-4:et3 ]
+    - endpoints: [ PE-2-3:et1, PE-2-1:et1 ]
+    - endpoints: [ PE-2-3:et4, RR-2-1:et1 ]
+    - endpoints: [ PE-2-4:et1, PE-2-2:et1 ]
+    - endpoints: [ PE-2-1:et3, PE-2-2:et3 ]
+    - endpoints: [ CE-1-1:et1, PE-1-1:et11 ]
+    - endpoints: [ CE-1-1:et2, PE-1-2:et11 ]
+    - endpoints: [ CE-1-2:et1, PE-1-1:et12 ]
+    - endpoints: [ CE-1-2:et2, PE-1-2:et12 ]
+    - endpoints: [ CE-2-1:et1, PE-2-1:et11 ]
+    - endpoints: [ CE-2-1:et2, PE-2-2:et11 ]
+    - endpoints: [ CE-2-2:et1, PE-2-1:et12 ]
+    - endpoints: [ CE-2-2:et2, PE-2-2:et12 ]
