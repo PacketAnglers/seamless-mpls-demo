@@ -1,13 +1,22 @@
 # Arista Seamless MPLS Demo
 
-## Spin up the Lab!
+## QuickStart
 
-### Overview:
+From the terminal:
+
+- Start the lab: `make start`
+- Stop the lab: `make stop`
+- Inspect the lab: `make inspect`
+
+> [!TIP]
+> For the best experience, the [VS Code ContainerLab Extension](https://containerlab.dev/manual/vsc-extension/) is Highly Recommended
+
+## Overview
 
 - 22 Nodes
 - Built and validated with cEOS-Lab 4.35.0F
 
-### Requirements
+## Requirements
 
 - [ContainerLab](https://containerlab.dev/install/) Host
 - [cEOS-Lab image](https://www.arista.com/en/support/software-download)
